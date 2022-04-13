@@ -256,7 +256,7 @@ class UnityEyes(BaseDataSource):
             eye += np.random.randint(low=-intensity_noise, high=intensity_noise,
                                      size=eye.shape, dtype=np.int16)
             cv.normalize(eye, eye, alpha=0, beta=255, norm_type=cv.NORM_MINMAX)
-            eye = eye.astype(np.uint8)
+            eye = eye.astype(np.uint16)
 
         # Add blur to eye image
         blur_noise = noisy_value_from_type('blur')
